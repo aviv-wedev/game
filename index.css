@@ -1,0 +1,155 @@
+#page-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.game-controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+#start-game,
+#reset-game {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#start-game {
+  background-color: #4caf50; /* Green background for start game */
+  color: white;
+}
+
+#reset-game {
+  background-color: #f44336; /* Red background for reset */
+  color: white;
+  cursor: not-allowed;
+}
+
+#reset-game.active {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#reset-game.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Styling for the game canvas */
+#game-canvas {
+  border: 3px black solid;
+  margin: 40px;
+  padding: 40px;
+  background-color: beige;
+  height: 90%;
+  width: 95%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Ensure full height/width layout for the body */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: lightskyblue;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* General styling for game objects */
+.game-object {
+  position: absolute;
+}
+
+/* Styling for the player */
+.player {
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  transition: all 0.01s ease-in;
+}
+
+/* Styling for the dots */
+.dot {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+/* Styling for the speed display */
+#speed-display {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.6); /* Slightly transparent background */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  z-index: 3;
+}
+
+/* Styling for the timer display */
+#timer-display {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  font-size: 16px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  z-index: 3;
+}
+
+/* Effect when collecting dots */
+.collect-effect {
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.chasing-enemy {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.sentry-enemy {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+}
+
+.projectile {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  border-radius: 50%;
+}
